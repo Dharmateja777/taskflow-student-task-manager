@@ -1,0 +1,564 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #080d20;
+  --card: #121c38;
+  --text: #f4f7ff;
+  --muted: #a7b4d3;
+  --primary: #7048ff;
+  --border: rgba(133, 155, 255, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at top left, #19245b 0%, transparent 42%),
+    radial-gradient(ellipse at bottom right, #35165c 0%, transparent 35%),
+    var(--bg);
+}
+
+button, input, select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Login / Signup */
+
+#authSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card,
+#authForm {
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+}
+
+.auth-card {
+  background: linear-gradient(145deg, #182541, #10182e);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 35px;
+  box-shadow: 0 25px 70px #0006;
+}
+
+.auth-card h1 {
+  text-align: center;
+  font-size: 34px;
+  margin: 0;
+  font-weight: 800;
+}
+
+.auth-card h1 span,
+.header h1 span {
+  color: #8b72ff;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#loginTab,
+#signupTab {
+  flex: 1;
+  background: #202d49;
+  color: #b9c5e2;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+#loginTab.active,
+#signupTab.active {
+  background: linear-gradient(110deg, #7546ff, #236dff);
+  color: white;
+}
+
+#authForm input {
+  width: 100%;
+  background: #0b1228;
+  color: white;
+  border: 1px solid #2b3a60;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  outline: none;
+}
+
+#authForm input:focus {
+  border-color: #785bff;
+}
+
+#authSubmit {
+  width: 100%;
+  background: linear-gradient(110deg, #7546ff, #236dff);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-weight: 700;
+}
+
+#authMessage {
+  color: #ffb0bd;
+  text-align: center;
+}
+
+/* Dashboard */
+
+#appContainer {
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  padding: 28px 5%;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 24px 30px;
+  background: linear-gradient(110deg, #101b49, #25145a);
+  border: 1px solid rgba(112, 72, 255, 0.35);
+  border-radius: 22px;
+  box-shadow: 0 8px 35px #0004;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.header p {
+  color: var(--muted);
+  margin: 8px 0 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.date {
+  color: #bdc9ee;
+  font-weight: 600;
+  text-align: right;
+}
+
+#logoutBtn {
+  background: linear-gradient(110deg, #f04444, #c91832);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 22px;
+  font-weight: 700;
+}
+
+/* Welcome */
+
+.welcome {
+  margin: 32px 0 20px;
+}
+
+.welcome h2 {
+  font-size: 26px;
+  margin: 0 0 8px;
+}
+
+.welcome p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Stats Cards */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin: 25px 0 35px;
+}
+
+.stat-card {
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 30px #0003;
+}
+
+.stat-card:nth-child(1) {
+  background: linear-gradient(135deg, #123d91, #122451);
+  border-color: #276be5;
+}
+
+.stat-card:nth-child(2) {
+  background: linear-gradient(135deg, #703b19, #2b1d24);
+  border-color: #a35a24;
+}
+
+.stat-card:nth-child(3) {
+  background: linear-gradient(135deg, #075c4c, #102d38);
+  border-color: #008f6b;
+}
+
+.stat-card p {
+  margin: 0;
+  color: #d4defa;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stat-card h3 {
+  font-size: 36px;
+  margin: 12px 0 0;
+}
+
+/* Tasks */
+
+.task-section {
+  background: linear-gradient(145deg, #121c38, #0e1630);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 12px 30px #0003;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+#showFormBtn,
+#taskForm button[type="submit"] {
+  background: linear-gradient(110deg, #7546ff, #236dff);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-weight: 700;
+}
+
+/* Task Form */
+
+#taskForm {
+  background: #0b1228;
+  border: 1px solid #2b3a60;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 22px;
+}
+
+#taskForm input,
+#taskForm select,
+#searchTasks {
+  width: 100%;
+  background: #0b1228;
+  color: white;
+  border: 1px solid #2b3a60;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  outline: none;
+}
+
+#taskForm input:focus,
+#taskForm select:focus,
+#searchTasks:focus {
+  border-color: #785bff;
+  box-shadow: 0 0 0 3px #7048ff26;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+#taskForm button[type="submit"] {
+  width: 100%;
+}
+
+/* Search and Filters */
+
+.task-tools {
+  margin: 22px 0;
+}
+
+#searchTasks {
+  max-width: 100%;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-btn {
+  background: #1b2949;
+  color: #c2cdef;
+  border: 1px solid #2b3a60;
+  padding: 11px 20px;
+  border-radius: 50px;
+}
+
+.filter-btn.active {
+  background: linear-gradient(110deg, #743cff, #a13dff);
+  color: white;
+  border-color: transparent;
+}
+
+/* Progress */
+
+.progress-section {
+  background: #0b1228;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #202e50;
+  margin: 22px 0;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 12px;
+  color: #cbd7f6;
+  font-weight: 600;
+}
+
+.progress-track {
+  height: 14px;
+  background: #222e50;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progress-fill,
+#progressBar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #783cff, #327bff, #19c5ff);
+  border-radius: 50px;
+  transition: width 0.5s ease;
+}
+
+/* Task List */
+
+#taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-card {
+  background: linear-gradient(145deg, #19254b, #101a34);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.task-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.task-card p {
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: #a9c5ff;
+  font-size: 13px;
+}
+
+.priority {
+  border-radius: 50px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.priority.High {
+  color: #ffcf6e;
+  background: #ff9d262b;
+}
+
+.priority.Medium {
+  color: #54e8bc;
+  background: #00d68f26;
+}
+
+.priority.Low {
+  color: #ff8296;
+  background: #ff405c26;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.task-actions button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 13px;
+  color: white;
+  font-weight: 600;
+}
+
+.task-actions button:first-child {
+  background: #1768e8;
+}
+
+.task-actions .complete-btn {
+  background: #009d70;
+}
+
+.task-actions .delete-btn {
+  background: #d8243f;
+}
+
+.task-card.completed {
+  opacity: 0.65;
+}
+
+.task-card.completed h3 {
+  text-decoration: line-through;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  color: #7180a6;
+  padding: 25px 0;
+  font-size: 13px;
+}
+
+/* Responsive */
+
+@media (max-width: 750px) {
+  #appContainer {
+    padding: 18px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .date {
+    text-align: left;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .task-section {
+    padding: 18px;
+  }
+
+  .task-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    width: 100%;
+  }
+
+  .task-actions button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 450px) {
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .welcome h2 {
+    font-size: 21px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .auth-card {
+    padding: 25px;
+  }
+}

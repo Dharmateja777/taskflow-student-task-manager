@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TaskFlow - Student Task Manager</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOGIN / SIGNUP PAGE -->
+  <section id="authSection" class="auth-section">
+
+    <div class="auth-card">
+
+      <h1>TaskFlow<span>.</span></h1>
+
+      <p class="auth-subtitle">
+        Your personal student productivity app
+      </p>
+
+      <div class="auth-tabs">
+
+        <button id="loginTab" class="auth-tab active">
+          Login
+        </button>
+
+        <button id="signupTab" class="auth-tab">
+          Sign Up
+        </button>
+
+      </div>
+
+    <form id="authForm">
+
+  <input
+    type="text"
+    id="authName"
+    placeholder="Your name"
+    class="hidden"
+  >
+
+  <input
+    type="email"
+    id="authEmail"
+    placeholder="Email address"
+    required
+  >
+
+  <input
+    type="password"
+    id="authPassword"
+    placeholder="Password (minimum 6 characters)"
+    minlength="6"
+    required
+  >
+
+  <button type="submit" id="authSubmit">
+    Login
+  </button>
+
+</form>
+
+      <p id="authMessage"></p>
+
+    </div>
+
+  </section>
+
+
+  <!-- MAIN TASK MANAGER -->
+  <div class="app-container hidden" id="appContainer">
+
+    <!-- Header -->
+    <header class="header">
+
+      <div>
+        <h1>TaskFlow<span>.</span></h1>
+
+        <p>
+          Organize your studies. Achieve your goals.
+        </p>
+      </div>
+
+      <div class="header-right">
+
+        <div class="date" id="currentDate"></div>
+
+        <button id="logoutBtn" class="logout-btn">
+          Logout
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- Welcome -->
+    <section class="welcome">
+
+      <h2>
+        Welcome back, <span id="studentName">Student</span> 👋
+      </h2>
+
+      <p>
+        Let's make today productive!
+      </p>
+
+    </section>
+
+
+    <!-- Dashboard Stats -->
+    <section class="stats">
+
+      <div class="stat-card">
+        <p>Total Tasks</p>
+        <h3 id="totalTasks">0</h3>
+      </div>
+
+      <div class="stat-card">
+        <p>Pending</p>
+        <h3 id="pendingTasks">0</h3>
+      </div>
+
+      <div class="stat-card">
+        <p>Completed</p>
+        <h3 id="completedTasks">0</h3>
+      </div>
+
+    </section>
+
+
+    <!-- Tasks Section -->
+    <section class="task-section">
+
+      <div class="section-heading">
+
+        <h2>My Tasks</h2>
+
+        <button id="showFormBtn">
+          + Add Task
+        </button>
+
+      </div>
+
+
+      <!-- Task Form -->
+      <form id="taskForm" class="task-form hidden">
+
+        <input
+          type="text"
+          id="taskTitle"
+          placeholder="Enter task title"
+          required
+        >
+
+        <input
+          type="text"
+          id="taskDescription"
+          placeholder="Description (optional)"
+        >
+
+        <div class="form-row">
+
+          <input
+            type="date"
+            id="taskDate"
+            required
+          >
+
+          <select id="taskPriority">
+
+            <option value="Low">
+              Low Priority
+            </option>
+
+            <option value="Medium" selected>
+              Medium Priority
+            </option>
+
+            <option value="High">
+              High Priority
+            </option>
+
+          </select>
+
+        </div>
+
+        <button type="submit">
+          Save Task
+        </button>
+
+      </form>
+
+
+      <!-- Search -->
+      <div class="task-tools">
+
+        <input
+          type="text"
+          id="searchTasks"
+          placeholder="🔍 Search tasks..."
+        >
+
+        <!-- Filters -->
+        <div class="filters">
+
+          <button
+            class="filter-btn active"
+            data-filter="all"
+          >
+            All
+          </button>
+
+          <button
+            class="filter-btn"
+            data-filter="pending"
+          >
+            Pending
+          </button>
+
+          <button
+            class="filter-btn"
+            data-filter="completed"
+          >
+            Completed
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Progress -->
+      <div class="progress-section">
+
+        <div class="progress-info">
+
+          <span>
+            Overall Progress
+          </span>
+
+          <span id="progressText">
+            0%
+          </span>
+
+        </div>
+
+        <div class="progress-track">
+
+          <div
+            id="progressBar"
+            class="progress-fill"
+          ></div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Task Cards -->
+      <div id="taskList" class="task-list">
+
+        <!-- JavaScript will display tasks here -->
+
+      </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+      <p>
+        Built with HTML, CSS & JavaScript
+      </p>
+
+    </footer>
+
+  </div>
+
+
+  <!-- JavaScript -->
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
